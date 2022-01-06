@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Company</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div>
+            <a class="brand" href="#">Company</a>
+        </div>
+        <div>
+            <div class="dropdown">
+                <button class="dropbtn">ABOUT
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">HISTORY</a>
+                    <a href="#">VISION MISSION</a>
+                </div>
+            </div>
+            <a href="#news">OUR WORK</a>
+            <a href="#news">OUR TEAM</a>
+            <a href="#news">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
+                checked="checked">
+            <div class="carousel-item">
+                <img src="images/bg.jpg">
+                <div class="carousel-text">
+                    THIS IS A PLACE WHERE TECHNOLOGY & <br />
+                    CREATIVITY FUSED INTO DIGITAL CHEMISTRY
+                </div>
+            </div>
+            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+            <div class="carousel-item">
+                <img src="images/about-bg.jpg">
+                <div class="carousel-text">
+                    WE DON'T HAVE THE BEST BUT WE HAVE THE <br />
+                    GREATEST TEAM
+                </div>
+            </div>
+            <label for="carousel-2" class="carousel-control next control-1">›</label>
+            <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+            <label for="carousel-2" class="carousel-control prev control-1">‹</label>
+            <label for="carousel-1" class="carousel-control next control-2">›</label>
+            <ol class="carousel-indicators">
+                <li>
+                    <label for="carousel-1" class="carousel-bullet">•</label>
+                </li>
+                <li>
+                    <label for="carousel-2" class="carousel-bullet">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main class="container">
+        <div id="values">
+            <h2>OUR VALUES</h2>
+            <div class="values-container">
+                <div class="card" style="background-color: #EA7C6F;">
+                    <img src="images/lightbulb-o.png">
+                    <h3 class="card-header">INNOVATIVE</h3>
+                    <p class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem
+                        deserunt, unde, eaque ipsa?
+                    </p>
+                </div>
+                <div class="card" style="background-color: #6A996F;">
+                    <img src="images/bank.png">
+                    <h3 class="card-header">LOYALTY</h3>
+                    <p class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem
+                        deserunt, unde, eaque ipsa?
+                    </p>
+                </div>
+                <div class="card" style="background-color: #5696C2;">
+                    <img src="images/balance-scale.png">
+                    <h3 class="card-header">RESPECT</h3>
+                    <p class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem
+                        deserunt, unde, eaque ipsa?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact" id="contact">
+            <h2>CONTACT</h2>
+            <form id="form">
+                <div class="form-control">
+                    <label for="name">Name</label>
+                    <input class="input" type="text" id="name" name="name">
+                    <div class="error"></div>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input class="input" type="email" id="email" name="email">
+                    <div class="error"></div>
+                </div>
+                <div class="form-control">
+                    <label for="message">Message</label>
+                    <textarea rows="5" class="input" id="message" name="message"></textarea>
+                    <div class="error"></div>
+                </div>
+                <div>
+                    <button id="button" type="submit">SUBMIT</button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &#169; 2016. PT Company</p>
+        <div class="social">
+            <a href="#">
+                <img style="width: 50%;" src="images/facebook-official.png">
+            </a>
+            <a href="#">
+                <img style="width: 50%;" src="images/twitter.png">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="index.js"></script>
+</body>
+
+</html>
