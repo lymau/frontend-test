@@ -11,54 +11,21 @@ body {
     margin-left: auto;
 } 
 
-.navbar {
-  overflow: hidden;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  top: 0;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: #555;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.navbar .brand {
-    font-size: 18px;
-    color: black;
-    font-weight: bold;
-}
-
-/* The dropdown container */
 .dropdown {
-  float: left;
   overflow: hidden;
 }
 
-/* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
   outline: none;
   color: #555;
-  padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+  font-family: inherit; 
 }
 
-/* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #f5f5f5;
 }
 
-/* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -68,7 +35,6 @@ body {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   float: none;
   color: #555;
@@ -78,23 +44,173 @@ body {
   text-align: left;
 }
 
-/* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #404040;
   color: white;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #333 !important;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.navbar li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+  color: #666;
+}
+
+.navbar li a:hover,
+.navbar .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+.navbar .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.navbar .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navbar .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.navbar .menu-icon .navicon:before,
+.navbar .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.navbar .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.navbar .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.navbar .menu-btn {
+  display: none;
+}
+
+.navbar .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.navbar .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navbar .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 48em) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    padding: 20px 30px;
+  }
+  .navbar .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .navbar .menu-icon {
+    display: none;
+  }
+}
+
+
+.section-title {
+  margin-top: 100px;
 }
 
 .values-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding-left: 12em;
-    padding-right: 12em;
+    margin: 0 10%;
+}
+
+@media screen and (max-width: 576px){
+  .values-container {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    width: 60% !important;
+  }
+
+  .carousel-text {
+    font-size: 14px !important;
+    top: 55% !important;
+    left: 10% !important;
+  }
 }
 
 .card {
@@ -102,23 +218,55 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  border: 10px solid transparent;
+  right: -20px;
+  top: 50%;
 }
 
 .card-header {
     text-align: center;
     font-weight: bold;
+    flex-basis: 100%;
+    margin-bottom: 0;
 }
 
 .card-body {
   font-weight: normal;
   text-align: center;
+  flex-basis: 100%;
 }
 
 .card img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
+  object-fit: cover;
+  height: 14px;
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+
+.card#innovative {
+  background-color: #EA7C6F;
+}
+
+.card#innovative::before {
+  border-left-color: #EA7C6F;
+}
+
+.card#loyalty {
+  background-color: #6A996F;
+}
+
+.card#loyalty::before {
+  border-left-color: #6A996F;
+}
+
+.card#respect {
+  background-color: #5696C2;
 }
 
 .contact {
@@ -136,18 +284,23 @@ form {
   width: 40%;
 }
 
-.form-control.success input {
+.form-control.success input, .form-control.success textarea {
     border-color: #09c372;
 }
 
-.form-control.error input {
+.form-control.error input, .form-control.error textarea {
     border-color: #ff3860;
 }
 
 .form-control .error {
     color: #ff3860;
-    font-size: 9px;
+    font-size: 12px;
     height: 13px;
+}
+
+.form-control {
+  position: relative;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -170,10 +323,6 @@ label {
 
 .input:focus {
   border: 1px solid #5696C2;
-}
-
-.border-danger {
-  border: 1px solid red;
 }
 
 button[type=submit] {
@@ -244,6 +393,7 @@ footer .social {
     display: block;
     height: auto;
     max-width: 100%;
+    object-fit: cover;
 }
 
 .carousel-control {
@@ -303,7 +453,7 @@ footer .social {
 }
 
 .carousel-bullet {
-    color: #fff;
+    color: #bbb;
     cursor: pointer;
     display: block;
     font-size: 35px;
@@ -316,7 +466,7 @@ footer .social {
 #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-    color: #428bca;
+    color: white;
 }
 
 #title {

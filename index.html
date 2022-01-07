@@ -11,25 +11,25 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div>
-            <a class="brand" href="#">Company</a>
-        </div>
-        <div>
-            <div class="dropdown">
-                <button class="dropbtn">ABOUT
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">HISTORY</a>
-                    <a href="#">VISION MISSION</a>
+    <navbar class="navbar">
+        <a href="" class="logo">Company</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li>
+                <div href="#about" class="dropdown">
+                    <a href="#" class="dropbtn">ABOUT</a>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" href="#">HISTORY</a>
+                        <a class="dropdown-item" href="#">VISSION MISSION</a>
+                    </div>
                 </div>
-            </div>
-            <a href="#news">OUR WORK</a>
-            <a href="#news">OUR TEAM</a>
-            <a href="#news">CONTACT</a>
-        </div>
-    </nav>
+            </li>
+            <li><a href="#work">OUR WORK</a></li>
+            <li><a href="#team">OUR TEAM</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </navbar>
 
     <!-- Jumbotron -->
     <div class="carousel">
@@ -69,9 +69,9 @@
     <!-- Main -->
     <main class="container">
         <div id="values">
-            <h2>OUR VALUES</h2>
+            <h2 class="section-title">OUR VALUES</h2>
             <div class="values-container">
-                <div class="card" style="background-color: #EA7C6F;">
+                <div class="card" id="innovative">
                     <img src="images/lightbulb-o.png">
                     <h3 class="card-header">INNOVATIVE</h3>
                     <p class="card-body">
@@ -79,27 +79,27 @@
                         deserunt, unde, eaque ipsa?
                     </p>
                 </div>
-                <div class="card" style="background-color: #6A996F;">
+                <div class="card" id="loyalty">
                     <img src="images/bank.png">
                     <h3 class="card-header">LOYALTY</h3>
                     <p class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem
-                        deserunt, unde, eaque ipsa?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit similique eum itaque facere
+                        temporibus dolores.
                     </p>
                 </div>
-                <div class="card" style="background-color: #5696C2;">
+                <div class="card" id="respect">
                     <img src="images/balance-scale.png">
                     <h3 class="card-header">RESPECT</h3>
                     <p class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime exercitationem dolorem
-                        deserunt, unde, eaque ipsa?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, sit? Tenetur et neque
+                        quod incidunt!
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="contact" id="contact">
-            <h2>CONTACT</h2>
+            <h2 class="section-title">CONTACT US</h2>
             <form id="form">
                 <div class="form-control">
                     <label for="name">Name</label>

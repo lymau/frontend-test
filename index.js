@@ -54,6 +54,6 @@ const validateInputs = () => {
     if (messageValue === '') {
         setError(message, 'This field is required');
     } else {
-        setSuccess(password);
+        setSuccess(message);
     }
 }
